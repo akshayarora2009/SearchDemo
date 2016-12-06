@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Search Demo - Inpedia</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/javascripts/typeahead.bundle.min.js"></script>
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.min.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+    </style>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="android-title mdl-layout-title">
+
+          </span>
+            <!-- Add spacer, to align navigation to the right in desktop -->
+            <div class="android-header-spacer mdl-layout-spacer"></div>
+            <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+
+            </div>
+            <!-- Navigation -->
+            <div class="android-navigation-container">
+                <nav class="android-navigation mdl-navigation">
+
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Help</a>
+                </nav>
+            </div>
+            <span class="android-mobile-title mdl-layout-title">
+            <img class="android-logo-image" src="images/android-logo.png">
+          </span>
+            <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+                <li class="mdl-menu__item">About Us</li>
+                <li class="mdl-menu__item">Contact Us</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="android-content mdl-layout__content">
+        <!-- <a name="top"></a> -->
+        <div class="android-be-together-section mdl-typography--text-center">
+            <div class="logo-font android-slogan">Build Unique Search Experiences</div>
+            <div class="logo-font android-sub-slogan">welcome to inpedia... delight your customers with our lightning fast search</div>
+            <br/>
+            <div id="search-box">
+                <input style="height:50px; width:500px; background-color:#8bc34a; color:#FFFFFF" type="text" class="search-input" placeholder="Search for Amazon Products"/>
+            </div>
+            <br/>
+            <!-- <img style="z-index: 5000; height: 800px; width: auto;" src="/images/slide01.jpg"/>-->
+        </div>
+        <div class="android-screen-section mdl-typography--text-center">
+
+        </div>
+
+
+    </div>
+</div>
+<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+<script src="/javascripts/autocomplete.js"></script>
+
+</body>
+</html>
