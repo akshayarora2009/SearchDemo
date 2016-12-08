@@ -31,7 +31,7 @@ $searchSelect.typeahead({
     templates: {
         empty: [
             '<div class="empty-message">',
-            'unable to find any Best Picture winners that match the current query',
+            'No results found :(',
             '</div>'
         ].join('\n'),
         suggestion: function(item){
@@ -57,7 +57,7 @@ $searchSelect.typeahead({
                 category += '...';
             }
 
-            return '<div class="mdl-grid"><div style="text-align: left" class="mdl-cell mdl-cell--7-col mdl-cell--stretch"><div><b>' + title + '</b></div><div>in ' + category + '</div></div><div style="text-align: right; font-size: 32px; color:#FFD700" class="mdl-cell mdl-cell--2-col">' + price + '</div><div class="mdl-cell mdl-cell--3-col"><img style="height:90px; width:100%" src="' + imUrl + '"/></div></div>';
+            return '<div class="mdl-grid"><div style="text-align: left" class="mdl-cell mdl-cell--7-col mdl-cell--stretch"><div><b>' + title + '</b></div><div>in ' + category + '</div></div><div style="text-align: right; font-size: 130%; color:#f44336" class="mdl-cell mdl-cell--2-col">' + price + '</div><div class="mdl-cell mdl-cell--3-col"><img style="height:90px; width:100%" src="' + imUrl + '"/></div></div>';
         }
     }
 });
