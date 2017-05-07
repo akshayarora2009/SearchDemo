@@ -1,6 +1,7 @@
 var startTime;
 
 var request_took = [];
+var token = $('#token');
 
 function request_took_stats(){
 
@@ -42,7 +43,7 @@ var engine = new Bloodhound({
         return Bloodhound.tokenizers.whitespace(datum['_source'].title)
     },
     remote: {
-        url: 'http://capstone.aroraakshay.in/amazon/products?token=asdkjfq34wefsdcx',
+        url: 'http://capstone.aroraakshay.in/amazon/products?token=' + token,
         filter: function(response){
             console.log(response.data.meta);
             request_took.push(response.data.meta.took);
