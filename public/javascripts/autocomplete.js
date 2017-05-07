@@ -1,3 +1,40 @@
+var startTime;
+
+var request_took = [];
+
+function request_took_stats(){
+
+    var sum = 0;
+    var max = 0;
+    var min = 99999;
+    for(var i = 0; i < request_took.length; ++i){
+        request_took[i] = Number(request_took[i]);
+        sum += request_took[i];
+        if(max < request_took[i]){
+            max = request_took[i];
+        }
+        if(min > request_took[i]){
+            min = request_took[i];
+        }
+    }
+    var mean = sum/request_took.length;
+
+    return {
+        'mean': mean.toFixed(3),
+        'max': max.toFixed(3),
+        'min': min.toFixed(3)
+    };
+}
+
+function update_request_stats(){
+    var stats = request_took_stats();
+    console.log(stats);
+
+    $('#average_time_taken').html(stats['mean']);
+    $('#max_time_taken').html(stats['max']);
+    $('#min_time_taken').html(stats['min']);
+}
+
 var engine = new Bloodhound({
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     datumTokenizer: function(datum){
@@ -5,10 +42,19 @@ var engine = new Bloodhound({
         return Bloodhound.tokenizers.whitespace(datum['_source'].title)
     },
     remote: {
-        url: 'http://capstone.aroraakshay.in/amazon/products?token=asdkjfq34wefsdcx&q=%QUERY',
-        wildcard: '%QUERY',
+        url: 'http://capstone.aroraakshay.in/amazon/products?token=asdkjfq34wefsdcx',
         filter: function(response){
+            console.log(response.data.meta);
+            request_took.push(response.data.meta.took);
+            update_request_stats();
             return response.data.res;
+        },
+        prepare: function (query, settings) {
+            startTime = new Date().getTime();
+            console.log("Starting network call..");
+
+            settings.data = {q: query};
+            return settings;
         }
     }
 });

@@ -27,6 +27,8 @@
             z-index: 900;
         }
     </style>
+
+
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -65,8 +67,47 @@
     <div class="android-content mdl-layout__content">
         <!-- <a name="top"></a> -->
         <div class="android-be-together-section mdl-typography--text-center">
-            <div class="logo-font android-slogan">Build Unique Search Experiences</div>
-            <div class="logo-font android-sub-slogan">welcome to inpedia... delight your customers with our lightning fast search</div>
+            <!--<div class="logo-font android-slogan">Build Unique Search Experiences</div>-->
+            <div id="wrapper" style="text-align: center">
+            <table class="mdl-data-table mdl-js-data-table" style="display: inline-block; font-size: 150%">
+                <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Total Rows of Data
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            9,391,576
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Mean
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <span id="average_time_taken">0</span>s
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Max
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <span id="max_time_taken">0</span>s
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            Min
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <span id="min_time_taken">0</span>s
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+            <!--<div class="logo-font android-sub-slogan">welcome to inpedia... delight your customers with our lightning fast search</div>-->
             <br/>
             <div id="search-box">
                 <input style="height:50px; width:500px; background-color:#8bc34a; color:#ffffff" type="text" class="search-input" placeholder="Search for Amazon Products"/>
