@@ -1,7 +1,7 @@
 var startTime;
 
 var request_took = [];
-var token = $('#token');
+var token = String($('#token').html());
 
 function request_took_stats(){
 
